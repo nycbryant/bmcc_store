@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        /* nav start */
+        nav {
+            background-color: black;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbutton {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown2 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown2 a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown2 a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown2 {
+            display: block;
+        }
+
+        /* nav end */
+
+        body {
+            font-family: system-ui;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 1000px;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            row-gap: 20px;
+            margin-top: 50px;
+        }
+
+        .list .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 50px 50px #000000;
+            letter-spacing: 1px;
+        }
+
+        .list .item img {
+            width: 75%;
+            /* height: 75%; */
+            /* object-fit: cover; */
+        }
+
+        .list .item .title {
+            font-weight: 600;
+            color: black;
+        }
+
+        .shared-title {
+            font-weight: 600;
+        }
+
+        .list .item,
+        .sidebar .product-name {
+            color: #fff;
+        }
+
+        .list .item .price {
+            color: black;
+            margin: 10px;
+        }
+
+        .list .item button,
+        .sidebar button,
+        .sidebar-buttons button {
+            background-color: #443b3b;
+            color: #fff;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+            <button class="dropbutton">Shop Our Products!</button>
+            <div class="dropdown2">
+                <a href="products1.html">TVs</a>
+                <a href="products2.html">DVDs</a>
+                <a href="#">Product 3</a>
+                <a href="#">Product 4</a>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h3>DVDs</h3>
+
+        <div class="list">
+            <!-- Product 1 -->
+            <div class="item" id="product1">
+                <img src="images/dvd1.jpeg" alt="product1">
+                <h2 class="title">DVD 1</h2>
+                <p class="price"><strong>Price: $100 </strong><br>
+                    Panasonic DVD Player with Dolby Digital Sound, 1080p HD Upscaling for DVDs, HDMI and USB Connections - DVD-S700 (Black)
+                </p>
+                <button onclick="addInCart('Logitech G Pro Superlight X', 150, 'image/1.png')">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="item" id="product2">
+                <img src="images/dvd2.jpeg" alt="product2">
+                <h2 class="title">DVD 2</h2>
+                <p class="price"><strong>Price: $200 </strong><br>
+                    DVD Players for TV with HDMI, DVD Players That Play All Regions, Simple DVD Player for Elderly, CD Player for Home Stereo System, Included HDMI and RCA Cable</p>
+                <button onclick="addInCart('Logitech G Pro Wireless', 100, 'image/2.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="item" id="product3">
+                <img src="images/dvd3.jpeg" alt="product3">
+                <h2 class="title">DVD 3</h2>
+                <p class="price"><strong>Price: $300 </strong><br>
+                    Sony DVPSR510H DVD Player, with HDMI port (Upscaling)</p>
+                <button onclick="addInCart('Logitech G Pro Wireless', 100, 'image/2.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="item" id="product4">
+                <img src="images/dvd4.jpeg" alt="product3">
+                <h2 class="title">DVD 4</h2>
+                <p class="price"><strong>Price: $400 </strong><br>
+                    HDMI DVD Player for TV, 1080P Region, HDMI Included, Slim Mini DVD Player with Remote Control, USB DVD Player with CD Compatibility, HDMI or AV Output | Majority DVD Player for Smart TV</p>
+                <button onclick="addInCart('Logitech G Pro Wireless', 100, 'image/2.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="item" id="product5">
+                <img src="images/dvd5.jpeg" alt="product5">
+                <h2 class="title">DVD 5</h2>
+                <p class="price"><strong>Price: $477.99 </strong><br>
+                    Samsung HD DVD/Blu-Ray Disc Player for TV with HDMI and AV Cables, 1080P, Built-in PAL NTSC, Coaxial Output, USB Input</p>
+                <button onclick="addInCart('Logitech G Pro Wireless', 100, 'image/2.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="item" id="product5">
+                <img src="images/dvd1.jpeg" alt="product5">
+                <h2 class="title">DVD 6</h2>
+                <p class="price"><strong>Price: $547.99 </strong><br>
+                    MEGATEK Region-Free DVD Player for TV with HDMI, CD Player for Home, Plays All Regions and Formats, USB Port, Durable Metal Casing, Remote, HDMI and RCA</p>
+                <button onclick="addInCart('Logitech G Pro Wireless', 100, 'image/2.png')">Add to Cart</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
